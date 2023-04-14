@@ -1,20 +1,9 @@
 function fibonacci(num) {
 // your code here
 
-	if (num < 2) {
-    return num;
-  }
-  
-  let fibPrev = 0;
-  let fibCurr = 1;
-  
-  for (let i = 2; i <= num; i++) {
-    let temp = fibPrev;
-    fibPrev = fibCurr;
-    fibCurr = temp + fibCurr;
-  }
-  
-  return fibCurr;
+	  if (num <= 1)
+        return num;
+    return fib(num-1) + fib(num-2);
 }
 
 module.exports = fibonacci;
