@@ -3,9 +3,18 @@ function fibonacci(num) {
 
 	 if (num < 2) {
     return num;
-  } else {
-    return fibonacci(num - 1) + fibonacci(num - 2);
   }
+  
+  let fibPrev = 0;
+  let fibCurr = 1;
+  
+  for (let i = 2; i <= num; i++) {
+    let temp = fibPrev;
+    fibPrev = fibCurr;
+    fibCurr = temp + fibCurr;
+  }
+  
+  return fibCurr;
 }
 
 module.exports = fibonacci;
